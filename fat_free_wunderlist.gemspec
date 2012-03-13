@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Codemis"]
   s.email       = ["johnathan@still-water.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Sends Fat Free CRM tasks to Wunderlist To Do Manager}
+  s.description = %q{Using Action Mailer,  gem sends all tasks from Fat Free CRM to your Wunderlist account.}
 
   s.rubyforge_project = "fat_free_wunderlist"
 
