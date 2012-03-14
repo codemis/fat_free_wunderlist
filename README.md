@@ -8,13 +8,14 @@ Using an after_filter on the Task controller,  this gem will send your task to y
 
 Here are some of the features in this release:
 
-* Important Tasks - Tasks marked due as "As Soon As Possible" or "Today" will be flagged as important in your Wunderlist inbox/list.
+* Important Tasks - Tasks due "As Soon As Possible" or "Today" will be flagged as important.
+* User Specific - Each user can use their Wunderlist account.
 * Post to a List - Just supply the list in the initializer file, and all tasks will be added to that list.
-* Flags Assets -  If the task involves an account, contact, opportunity, etc,  then the asset name and type is added to the Wunderlist inbox/list.
+* Flags Assets -  If the task involves an account, contact, opportunity, etc,  then the asset name and type is added to the Wunderlist todo.
 
 ## Limitations
 
-Since we are using the email approach,  you will not be able to update or delete tasks in your Wunderlist account through your Fat Free CRM.  You will need to manage them in your Wunderlist account.  Also,  this gem only supports one Wunderlist account and list per user.
+Since we are using the email approach,  you will not be able to update or delete tasks added to your Wunderlist account through your Fat Free CRM.  You will need to manage them in your Wunderlist account.  Also,  this gem only supports one Wunderlist account and list per user.
 
 ## Requirements
 
@@ -41,10 +42,20 @@ Run the generator for Fat Free Wunderlist:
 rails generate fat_free_wunderlist:install
 ```
 
-Now change the settings in config/initializers/fat\_free\_wunderlist.rb file that was generated.
+Now change the settings in config/initializers/fat\_free\_wunderlist.rb file that was generated.  The Hash is keyed to the User.id for the specific user. 
 
-	* wunderlist_email - the email address used on your Wunderlist account **Required**
-	* wunderlist_list - the list you want to add all tasks to.  If you leave it empty,  it will be delivered in your inbox
+```ruby
+FatFreeWunderlist.options.merge!(
+	1 => {
+		:wunderlist_email => '',
+		:wunderlist_list	=>	''
+	}
+)
+```
+Here are your options:
+
+* wunderlist_email - the email address used on your Wunderlist account **Required**
+* wunderlist_list - the list you want to add all tasks to.  If you leave it empty,  it will be delivered in your inbox
 
 ## Links
 
