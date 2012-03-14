@@ -63,6 +63,12 @@ describe WunderlistMailer do
 			mail.body.should == "#{task.name}"
 		end
 		
+		it "should add contact info if it exists" do
+			task = FactoryGirl.create(:task, {:bucket => 'due_tomorrow', :name => 'My Test', :asset => FactoryGirl.create(:contact), :asset_type => 'Contact'})
+			mail = WunderlistMailer.email_task(task, @options)
+			mail.body.should == "#{task.name}"
+		end
+		
 	end
   
 end
