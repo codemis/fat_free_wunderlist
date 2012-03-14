@@ -64,9 +64,17 @@ describe WunderlistMailer do
 		end
 		
 		it "should add contact info if it exists" do
-			task = FactoryGirl.create(:task, {:bucket => 'due_tomorrow', :name => 'My Test', :asset => FactoryGirl.create(:contact), :asset_type => 'Contact'})
+			contact = FactoryGirl.create(:contact)
+			task = FactoryGirl.create(:task, {:bucket => 'due_tomorrow', :name => 'My Test', :asset => contact, :asset_type => 'Contact'})
+			expected = "#{task.name} for #{contact.name} (#{task.asset_type.downcase})"
 			mail = WunderlistMailer.email_task(task, @options)
-			mail.body.should == "#{task.name}"
+			mail.body.should == expected
+		end
+		
+		it "should not add contact info if it is missing" do
+			task = FactoryGirl.create(:task, {:bucket => 'due_tomorrow', :name => 'My Test'})
+			mail = WunderlistMailer.email_task(task, @options)
+			mail.body.should_not include("for")
 		end
 		
 	end
