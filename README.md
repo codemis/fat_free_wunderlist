@@ -12,7 +12,7 @@ Using an after_filter on the Task controller,  this gem will send your task to y
 
 ## Limitations
 
-Since we are using the email approach,  you will not be able to update or delete tasks in your Wunderlist account through your Fat Free CRM.  You will need to manage them in your Wunderlist account.  Also,  this gem only supports one Wunderlist account and list.  If you wish to change that,  please send me a pull request with your updates.
+Since we are using the email approach,  you will not be able to update or delete tasks in your Wunderlist account through your Fat Free CRM.  You will need to manage them in your Wunderlist account.  Also,  this gem only supports one Wunderlist account and list per user.
 
 ## Requirements
 

@@ -11,10 +11,7 @@ module FatFreeWunderlist
 	# wunderlist_list: The list to add the task to.  If you leave it blank,  it will add it to your inbox
 	# 
 	def self.options
-		@options ||= {
-			:wunderlist_email => nil,
-			:wunderlist_list	=>	'',
-		}
+		@options ||= {}
 	end
 	
 end
