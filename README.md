@@ -28,7 +28,7 @@ Note: Before installing,  please make sure you setup Action Mailer in your Fat F
 Add the gem to your Gemfile and run the `bundle` command to install it.
 
 ```ruby
-gem "fat_free_crm"
+gem 'fat_free_wunderlist', :git => 'git@github.com:codemis/fat_free_wunderlist.git'
 ```
 
 Run the generator for Fat Free Wunderlist:
