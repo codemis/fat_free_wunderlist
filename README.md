@@ -6,9 +6,11 @@ Using an after_filter on the Task controller,  this gem will send your task to y
 
 # Features
 
-	* Important Tasks - Tasks marked due as "As Soon As Possible" or "Today" will be flagged as important in your Wunderlist inbox/list.
-	* Post to a List - Just supply the list in the initializer file, and all tasks will be added to that list.
-	* Flags Assets -  If the task involves an account, contact, opportunity, etc,  then the asset name and type is added to the Wunderlist inbox/list.
+Here are some of the features in this release:
+
+* Important Tasks - Tasks marked due as "As Soon As Possible" or "Today" will be flagged as important in your Wunderlist inbox/list.
+* Post to a List - Just supply the list in the initializer file, and all tasks will be added to that list.
+* Flags Assets -  If the task involves an account, contact, opportunity, etc,  then the asset name and type is added to the Wunderlist inbox/list.
 
 ## Limitations
 
@@ -16,10 +18,12 @@ Since we are using the email approach,  you will not be able to update or delete
 
 ## Requirements
 
-	* Ruby 1.9.2 or later.
-	* Rails 3.0 or later.
-	* Fat Free CRM 10.0  or later.
-	* A Wunderlist Account
+Requirements for this release:
+
+* Ruby 1.9.2 or later.
+* Rails 3.0 or later.
+* Fat Free CRM 10.0  or later.
+* A Wunderlist Account
 
 ## Installation
 
