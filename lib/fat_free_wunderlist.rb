@@ -2,7 +2,7 @@ require "fat_free_wunderlist/version"
 require "fat_free_wunderlist/controller_additions"
 require "fat_free_wunderlist/railtie" if defined? Rails && Rails::VERSION::MAJOR == 3
 # require the engine if rails is defined
-require 'fat_free_wunderlist/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
+require 'fat_free_wunderlist/engine' if defined? Rails && Rails::VERSION::MAJOR == 3
 
 module FatFreeWunderlist
 	

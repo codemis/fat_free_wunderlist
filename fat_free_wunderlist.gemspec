@@ -21,4 +21,10 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
   s.add_runtime_dependency "mail"
+	s.add_development_dependency "rails"
+	s.add_development_dependency "actionmailer"
+	s.add_development_dependency "rspec"
+	s.add_development_dependency "rspec-rails"
+	s.add_development_dependency 'combustion', '~> 0.3.1'
+	s.add_development_dependency 'sqlite3'
 end
