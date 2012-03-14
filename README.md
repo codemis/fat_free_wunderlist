@@ -64,6 +64,6 @@ Here are your options:
 
 ## Development
 
-Questions or problems? Please post them on the [issue tracker](https://github.com/codemis/fat_free_wunderlist/issues). You can contribute changes by forking the project and submitting a pull request. You can ensure the tests passing by running `bundle` and `rake`.
+Questions or problems? Please post them on the [issue tracker](https://github.com/codemis/fat_free_wunderlist/issues). You can contribute changes by forking the project and submitting a pull request. You can ensure the tests passing by running `bundle` and `rspec`.
 
 This gem is created by Johnathan Pulos and is under the MIT License.
