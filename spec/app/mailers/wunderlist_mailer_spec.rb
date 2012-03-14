@@ -2,11 +2,11 @@
 require 'spec_helper'
 
 describe WunderlistMailer do
-	
+
 	describe "#email_task" do
 		
 		before(:each) do
-			@task = mock_model(Task, {:bucket => 'due_asap', :name => 'Running a Test'})
+			@task = FactoryGirl.create(:task)
 			@options = {:wunderlist_email => 'johnathan@jpulos.com', :wunderlist_list => ''}
     end
   
@@ -19,7 +19,7 @@ describe WunderlistMailer do
 	describe "email structure" do
 		
 		before(:each) do
-			@task = mock_model(Task, {:bucket => 'due_asap', :name => 'Running a Test'})
+			@task = FactoryGirl.create(:task)
 			@options = {:wunderlist_email => 'johnathan@jpulos.com', :wunderlist_list => 'My Unique List'}
     end
 
@@ -46,19 +46,19 @@ describe WunderlistMailer do
 		end
 		
 		it "should add an astericks if bucket is due_asap" do
-			task = mock_model(Task, {:bucket => 'due_asap', :name => 'My Test'})
+			task = FactoryGirl.create(:task, {:bucket => 'due_asap', :name => 'My Test'})
 			mail = WunderlistMailer.email_task(task, @options)
 			mail.body.should == "*#{task.name}"
 		end
 		
 		it "should add an astericks if bucket is due_today" do
-			task = mock_model(Task, {:bucket => 'due_today', :name => 'My Test'})
+			task = FactoryGirl.create(:task, {:bucket => 'due_today', :name => 'My Test'})
 			mail = WunderlistMailer.email_task(task, @options)
 			mail.body.should == "*#{task.name}"
 		end
 		
 		it "should not add an astericks if bucket is due_tomorrow" do
-			task = mock_model(Task, {:bucket => 'due_tomorrow', :name => 'My Test'})
+			task = FactoryGirl.create(:task, {:bucket => 'due_tomorrow', :name => 'My Test'})
 			mail = WunderlistMailer.email_task(task, @options)
 			mail.body.should == "#{task.name}"
 		end

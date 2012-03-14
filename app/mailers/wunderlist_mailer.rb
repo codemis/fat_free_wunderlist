@@ -8,6 +8,7 @@ class WunderlistMailer < ActionMailer::Base
 		mail_options[:subject] = options.has_key?(:wunderlist_list)  ? options[:wunderlist_list] : ''
 		mail_options[:from] = options[:wunderlist_email]
 		@task = task
+		@task.name = @task.asset_type.empty? ? @task.name : "#{@task.name} for #{@task.asset.name} (#{@task.asset_type.downcase})"
 		@important_marker = ['due_asap', 'due_today'].include?(@task.bucket) ? '*' : ''
 		mail(mail_options)
 	end
